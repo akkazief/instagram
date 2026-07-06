@@ -1,4 +1,3 @@
-# accounts/views.py
 from django.contrib.auth import get_user_model
 from django.db.models import Q
 from django.views.generic import ListView
