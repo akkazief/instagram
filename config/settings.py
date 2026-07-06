@@ -44,9 +44,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "forum",
+    "instagram",
     "accounts",
-    'django_bootstrap5'
+    "django_bootstrap5",
 ]
 
 MIDDLEWARE = [
@@ -77,7 +77,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "config.wsgi.application"
-
 
 
 DATABASES = {
@@ -129,7 +128,13 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
-LOGIN_REDIRECT_URL  = 'projects_list'
-LOGOUT_REDIRECT_URL = 'projects_list'
+# LOGIN_REDIRECT_URL = "forum:topic_list"
 
+# LOGOUT_REDIRECT_URL = "forum:topic_list"
 
+LOGIN_URL = "accounts:login"
+
+AUTH_USER_MODEL = "accounts.User"
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
+MEDIA_URL = "/media/"
