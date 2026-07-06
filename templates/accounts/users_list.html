@@ -1,11 +1,11 @@
-{# accounts/templates/accounts/users_list.html #}
 {% extends "base.html" %}
 
+{% block search %}
+
+{% endblock %}
+
 {% block content %}
-<form method="get">
-  {{ form }}
-  <button type="submit">Найти</button>
-</form>
+
 
 <ul class="search-results">
   {% for user in users %}

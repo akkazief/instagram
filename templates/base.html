@@ -12,7 +12,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <title>{% block title %}Instagram{% endblock %}</title>
+  <title>Instagram</title>
 
 </head>
 <body>
@@ -22,9 +22,10 @@
   <div class="container">
     <a class="navbar-brand fw-bold" href="{% url 'posts_list' %}">Instagram</a>
 
-    <form action="{% url 'accounts:search' %}" method="get" class="d-flex mx-auto" style="max-width: 500px;">
+    <form action="{% url 'accounts:search' %}" method="get" class="d-flex mx-auto">
       <input type="text" name="q" class="form-control form-control-sm rounded-pill"
              placeholder="Поиск" value="{{ request.GET.q }}">
+      <button type="submit">Найти</button>
     </form>
 
     <ul class="navbar-nav flex-row align-items-center gap-3">
