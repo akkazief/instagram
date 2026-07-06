@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  {% include "partial/form.html" %}
+
+  <div class="card w-75 mx-auto text-center py-2">
+    <p class="mb-0">Уже есть аккаунт? <a href="{% url 'accounts:login' %}">Войти</a></p>
+  </div>
+{% endblock %}

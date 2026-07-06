@@ -20,3 +20,10 @@ class RegisterForm(UserCreationForm):
             "phone",
             "gender",
         )
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["email"].widget.attrs["placeholder"] = "Почта"
+        self.fields["username"].widget.attrs["placeholder"] = "Логин"
+        self.fields["password1"].widget.attrs["placeholder"] = "Пароль"
+        self.fields["password2"].widget.attrs["placeholder"] = "Повторите пароль"

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+  {% include "partial/form.html" with form_title="Вход" btn_txt="Войти" form_action="" form_id="login-form" %}
+
+  <div class="card w-75 mx-auto text-center py-2">
+    <p class="mb-0">Нет аккаунта? <a href="{% url 'accounts:register' %}">Зарегистрироваться</a></p>
+  </div>
+{% endblock %}
