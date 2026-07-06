@@ -13,7 +13,6 @@
       <a href="{% url 'accounts:profile' user.username %}">
         <img src="{{ user.avatar.url }}" width="32" height="32" alt="">
         <span>{{ user.username }}</span>
-        {% if user.first_name %} — {{ user.first_name }}{% endif %}
       </a>
     </li>
   {% empty %}

@@ -1,4 +1,3 @@
-# accounts/views/follow.py
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import get_object_or_404, redirect

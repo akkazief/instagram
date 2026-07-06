@@ -16,9 +16,9 @@
           {{ post.author.username }}
         </a>
       </div>
-
+        <a href="{% url 'post_detail' post.pk %}">
       <img src="{{ post.image.url }}" alt="Публикация {{ post.author.username }}"
-           class="w-100" style="max-height: 470px; object-fit: cover;">
+           class="w-100" style="max-height: 470px; object-fit: cover;"></a>
 
       <div class="card-body py-2">
         {% if post.description %}
