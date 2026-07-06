@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="mx-auto" style="max-width: 470px;">
+
+  <form method="get" class="d-flex mb-4">
+    {{ search_form.search }}
+    <button type="submit" class="btn btn-outline-secondary ms-2">Найти</button>
+  </form>
+
+  {% for post in posts %}
+    <div class="card mb-4 border">
+
+      <div class="card-header bg-white d-flex align-items-center gap-2 border-0 py-2">
+        <a href="{% url 'accounts:profile' username=post.author.username %}">
+          <img src="{{ post.author.avatar.url }}" alt="{{ post.author.username }}"
+               class="rounded-circle" width="32" height="32" style="object-fit: cover;">
+        </a>
+        <a href="{% url 'accounts:profile' username=post.author.username %}"
+           class="fw-semibold text-decoration-none text-dark">
+          {{ post.author.username }}
+        </a>
+      </div>
+
+        <img src="{{ post.image.url }}" alt="Публикация {{ post.author.username }}"
+             class="w-100" style="max-height: 470px; object-fit: cover;">
+
+     
+
+        {% if post.description %}
+          <p class="mb-1">
+            <a href="{% url 'accounts:profile' username=post.author.username %}"
+               class="fw-semibold text-decoration-none text-dark">
+              {{ post.author.username }}
+            </a>
+            {{ post.description }}
+          </p>
+        {% endif %}
+
+        <p class="text-muted small mb-0">{{ post.created_at|date:"d.m.Y H:i" }}</p>
+      </div>
+
+    </div>
+  {% empty %}
+    <div class="text-center text-muted py-5">
+      <p class="fs-5">Ничего не найдено</p>
+    </div>
+  {% endfor %}
+
+  {% if is_paginated %}
+    <nav>
+      <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if query %}&{{ query }}{% endif %}">Назад</a>
+          </li>
+        {% endif %}
+        <li class="page-item disabled">
+          <span class="page-link">{{ page_obj.number }} из {{ page_obj.paginator.num_pages }}</span>
+        </li>
+        {% if page_obj.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if query %}&{{ query }}{% endif %}">Вперёд</a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+  {% endif %}
+
+</div>
+{% endblock %}
