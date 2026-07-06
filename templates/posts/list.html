@@ -17,7 +17,6 @@
         </a>
       </div>
 
-      {# TODO: обернуть в ссылку на post_detail, когда появится страница поста (Задания 5-6) #}
       <img src="{{ post.image.url }}" alt="Публикация {{ post.author.username }}"
            class="w-100" style="max-height: 470px; object-fit: cover;">
 
@@ -36,11 +35,11 @@
       </div>
 
     </div>
-  {% empty %}
-    <div class="text-center text-muted py-5">
-      <p class="fs-5">Ничего не найдено</p>
-    </div>
-  {% endfor %}
+    {% empty %}
+      <div class="text-center text-muted py-5">
+        <p class="fs-5">Ничего не найдено</p>
+      </div>
+    {% endfor %}
 
   {% if is_paginated %}
       {% include "partial/pagination.html" %}

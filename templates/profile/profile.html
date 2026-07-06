@@ -1,16 +1,17 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
 {% block content %}
+
 <div class="mx-auto" style="max-width: 700px;">
 
   <div class="d-flex align-items-center gap-4 mb-4 pb-4 border-bottom">
-    <img src="{{ profile_user.avatar.url }}" alt="{{ profile_user.username }}"
-         class="rounded-circle" width="120" height="120" style="object-fit: cover;">
+    {% if profile_user.avatar %}
+      <img src="{{ profile_user.avatar.url }}" alt="{{ profile_user.username }}"
+           class="rounded-circle" width="120" height="120" style="object-fit: cover;">
+    {% endif %}
 
     <div>
       <h3 class="mb-2">{{ profile_user.username }}</h3>
-
-
 
       {% if profile_user.first_name %}
         <p class="fw-semibold mb-1">{{ profile_user.first_name }}</p>
@@ -18,15 +19,29 @@
       {% if profile_user.bio %}
         <p class="mb-0">{{ profile_user.bio }}</p>
       {% endif %}
+
+      <div class="counters">
+        <span>{{ posts.count }} публикаций</span>
+        <span>{{ profile_user.followers.count }} подписчиков</span>
+        <span>{{ profile_user.following.count }} подписок</span>
+      </div>
+
+      {% if request.user.is_authenticated and request.user != profile_user %}
+        <form method="post" action="{% url 'accounts:follow' profile_user.username %}">
+          {% csrf_token %}
+          <button type="submit">
+            {% if is_following %}Отписаться{% else %}Подписаться{% endif %}
+          </button>
+        </form>
+      {% endif %}
     </div>
   </div>
 
   <div class="row g-2">
     {% for post in posts %}
       <div class="col-4">
-        {# TODO: обернуть в ссылку на post_detail, когда появится страница поста #}
-        <img src="{{ post.image.url }}" alt="Публикация {{ profile_user.username }}"
-             class="w-100" style="aspect-ratio: 1 / 1; object-fit: cover;">
+          <img src="{{ post.image.url }}" alt="Публикация {{ profile_user.username }}"
+               class="w-100" style="aspect-ratio: 1 / 1; object-fit: cover;">
       </div>
     {% empty %}
       <div class="text-center text-muted py-5">
@@ -36,4 +51,5 @@
   </div>
 
 </div>
+
 {% endblock %}
