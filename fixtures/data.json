@@ -1,0 +1,290 @@
+[
+{
+  "model": "accounts.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$cNlD0YztTbmYBQ8ycrnVUr$HnnPXuut2Y4lc5DrbrzcAiva6iZxgUvb1rtVgEoy9BM=",
+    "last_login": "2026-07-06T10:09:44.309Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-07-06T06:32:41.960Z",
+    "email": "",
+    "avatar": "avatars/default.jpg",
+    "bio": "",
+    "phone": "",
+    "gender": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$7ewOk9lToNUE6gMU1E7h2C$R74IqXXS/EJwZIIWTUPFQwrMypVzN/aScSRfjMxNKMU=",
+    "last_login": "2026-07-06T09:42:49.328Z",
+    "is_superuser": false,
+    "username": "kenny",
+    "first_name": "kenny",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-06T09:42:48.501Z",
+    "email": "kenny@mail.ru",
+    "avatar": "avatars/None/pin.jpeg",
+    "bio": "",
+    "phone": "",
+    "gender": "M",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$9DsUvSQ9cPAB4w8d17RSts$iO8jFLLxk13v7Cc38Q/sPptJsRmL5MSpGhFHG6XeffA=",
+    "last_login": "2026-07-06T10:28:10.459Z",
+    "is_superuser": false,
+    "username": "kyle222",
+    "first_name": "kyle memfe",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-06T10:28:09.613Z",
+    "email": "kyle@gmail.com",
+    "avatar": "avatars/None/kyle.jpeg",
+    "bio": "hi im cail",
+    "phone": "+9099999999",
+    "gender": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$dvnuBtzEPI0gyLHBu0TBMW$WKEv9Ebwxvlp7X5LlKEX5KLBQzcVIvZTg/ypFU2J2pA=",
+    "last_login": "2026-07-06T10:30:34.671Z",
+    "is_superuser": false,
+    "username": "eric",
+    "first_name": "eric fuckign fat",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-06T10:30:33.916Z",
+    "email": "eric@gmail.com",
+    "avatar": "avatars/None/awd.jpeg",
+    "bio": "fatass",
+    "phone": "",
+    "gender": "F",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "instagram.post",
+  "pk": 1,
+  "fields": {
+    "author": [
+      "admin"
+    ],
+    "image": "posts/1/images.jpeg",
+    "description": "awdawdawdwad",
+    "created_at": "2026-07-06T08:27:20.827Z"
+  }
+},
+{
+  "model": "instagram.post",
+  "pk": 2,
+  "fields": {
+    "author": [
+      "admin"
+    ],
+    "image": "posts/1/images_WqFiWvI.jpeg",
+    "description": "awdawdawdwad",
+    "created_at": "2026-07-06T08:27:48.235Z"
+  }
+},
+{
+  "model": "instagram.post",
+  "pk": 3,
+  "fields": {
+    "author": [
+      "admin"
+    ],
+    "image": "posts/1/moder.jpeg",
+    "description": "awdwadwadawda",
+    "created_at": "2026-07-06T09:24:10.643Z"
+  }
+},
+{
+  "model": "instagram.post",
+  "pk": 4,
+  "fields": {
+    "author": [
+      "kenny"
+    ],
+    "image": "posts/2/pin.jpeg",
+    "description": "kennys_post",
+    "created_at": "2026-07-06T09:43:03.101Z"
+  }
+},
+{
+  "model": "instagram.post",
+  "pk": 5,
+  "fields": {
+    "author": [
+      "kyle222"
+    ],
+    "image": "posts/3/meme.jpeg",
+    "description": "kyle is a funny guy",
+    "created_at": "2026-07-06T10:28:55.784Z"
+  }
+},
+{
+  "model": "instagram.post",
+  "pk": 6,
+  "fields": {
+    "author": [
+      "kyle222"
+    ],
+    "image": "posts/3/mem1.jpeg",
+    "description": "instagram trash",
+    "created_at": "2026-07-06T10:29:29.108Z"
+  }
+},
+{
+  "model": "instagram.post",
+  "pk": 7,
+  "fields": {
+    "author": [
+      "eric"
+    ],
+    "image": "posts/4/mem2.jpg",
+    "description": "any memes",
+    "created_at": "2026-07-06T10:31:13.486Z"
+  }
+},
+{
+  "model": "instagram.post",
+  "pk": 8,
+  "fields": {
+    "author": [
+      "eric"
+    ],
+    "image": "posts/4/noanodandwoad.jpg",
+    "description": "LOREM IPSUM DOLOR APDMPALWMDPWMDOMWAPDMPAWMDPOWAMPDOMAWOPDMOPAMDOPAWMDPOAMDOWMAOPDMAOWMDP",
+    "created_at": "2026-07-06T10:31:27.663Z"
+  }
+},
+{
+  "model": "instagram.follow",
+  "pk": 2,
+  "fields": {
+    "follower": [
+      "admin"
+    ],
+    "following": [
+      "kenny"
+    ],
+    "created_at": "2026-07-06T10:10:53.130Z"
+  }
+},
+{
+  "model": "instagram.follow",
+  "pk": 3,
+  "fields": {
+    "follower": [
+      "eric"
+    ],
+    "following": [
+      "kenny"
+    ],
+    "created_at": "2026-07-06T10:31:42.152Z"
+  }
+},
+{
+  "model": "instagram.follow",
+  "pk": 4,
+  "fields": {
+    "follower": [
+      "eric"
+    ],
+    "following": [
+      "kyle222"
+    ],
+    "created_at": "2026-07-06T10:31:52.116Z"
+  }
+},
+{
+  "model": "instagram.like",
+  "pk": 5,
+  "fields": {
+    "post": 4,
+    "user": [
+      "kenny"
+    ],
+    "created_at": "2026-07-06T10:09:34.066Z"
+  }
+},
+{
+  "model": "instagram.like",
+  "pk": 6,
+  "fields": {
+    "post": 4,
+    "user": [
+      "admin"
+    ],
+    "created_at": "2026-07-06T10:10:56.453Z"
+  }
+},
+{
+  "model": "instagram.like",
+  "pk": 8,
+  "fields": {
+    "post": 5,
+    "user": [
+      "eric"
+    ],
+    "created_at": "2026-07-06T10:31:54.718Z"
+  }
+},
+{
+  "model": "instagram.comment",
+  "pk": 1,
+  "fields": {
+    "post": 1,
+    "author": [
+      "admin"
+    ],
+    "text": "первый комментарий",
+    "created_at": "2026-07-06T10:21:47.729Z"
+  }
+},
+{
+  "model": "instagram.comment",
+  "pk": 2,
+  "fields": {
+    "post": 1,
+    "author": [
+      "admin"
+    ],
+    "text": "второй",
+    "created_at": "2026-07-06T10:21:50.472Z"
+  }
+},
+{
+  "model": "instagram.comment",
+  "pk": 3,
+  "fields": {
+    "post": 1,
+    "author": [
+      "admin"
+    ],
+    "text": "третий",
+    "created_at": "2026-07-06T10:21:55.040Z"
+  }
+}
+]
