@@ -1,7 +1,12 @@
 from django.urls import path
 from instagram.views import (
-    CreatePostView, ListPostView, FollowView,
-    PostDetailView, LikeView, CommentCreateView)
+    CreatePostView,
+    ListPostView,
+    FollowView,
+    PostDetailView,
+    LikeView,
+    CommentCreateView,
+)
 
 
 urlpatterns = [

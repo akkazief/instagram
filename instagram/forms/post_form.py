@@ -7,5 +7,7 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ("image", "description")
         widgets = {
-            "description": forms.Textarea(attrs={"rows": 3, "placeholder": "Добавьте описание..."}),
+            "description": forms.Textarea(
+                attrs={"rows": 3, "placeholder": "Добавьте описание..."}
+            ),
         }

@@ -31,11 +31,13 @@ class RegisterView(CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context.update({
-            "form_title": "Регистрация",
-            "form_action": self.request.path,
-            "form_id": "register-form",
-            "btn_txt": "Зарегистрироваться",
-            "form_enctype": "multipart/form-data",
-        })
+        context.update(
+            {
+                "form_title": "Регистрация",
+                "form_action": self.request.path,
+                "form_id": "register-form",
+                "btn_txt": "Зарегистрироваться",
+                "form_enctype": "multipart/form-data",
+            }
+        )
         return context

@@ -17,11 +17,13 @@ class CreatePostView(LoginRequiredMixin, CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context.update({
-            "form_title": "Новая публикация",
-            "form_action": self.request.path,
-            "form_id": "post-form",
-            "btn_txt": "Опубликовать",
-            "form_enctype": "multipart/form-data",
-        })
+        context.update(
+            {
+                "form_title": "Новая публикация",
+                "form_action": self.request.path,
+                "form_id": "post-form",
+                "btn_txt": "Опубликовать",
+                "form_enctype": "multipart/form-data",
+            }
+        )
         return context

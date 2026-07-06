@@ -6,7 +6,9 @@ from accounts.models import User
 
 class RegisterForm(UserCreationForm):
     avatar = forms.ImageField(required=True, label="Аватар")
-    email = forms.EmailField(required=True, label="Электронная почта")  # это обязательно оставить
+    email = forms.EmailField(
+        required=True, label="Электронная почта"
+    )  # это обязательно оставить
 
     class Meta(UserCreationForm.Meta):
         model = User

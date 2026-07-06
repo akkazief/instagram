@@ -14,8 +14,7 @@ class PostDetailView(DetailView):
         user = self.request.user
 
         context["is_liked"] = (
-            user.is_authenticated
-            and self.object.likes.filter(user=user).exists()
+            user.is_authenticated and self.object.likes.filter(user=user).exists()
         )
         context["likes_count"] = self.object.likes.count()
         context["comments"] = self.object.comments.select_related("author")

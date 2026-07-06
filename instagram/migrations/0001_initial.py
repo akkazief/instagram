@@ -7,7 +7,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -16,18 +15,45 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Post',
+            name="Post",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('image', models.ImageField(upload_to=instagram.models.post.get_post_image_path, verbose_name='Изображение')),
-                ('description', models.TextField(blank=True, verbose_name='Описание')),
-                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Дата публикации')),
-                ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='posts', to=settings.AUTH_USER_MODEL, verbose_name='Автор')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "image",
+                    models.ImageField(
+                        upload_to=instagram.models.post.get_post_image_path,
+                        verbose_name="Изображение",
+                    ),
+                ),
+                ("description", models.TextField(blank=True, verbose_name="Описание")),
+                (
+                    "created_at",
+                    models.DateTimeField(
+                        auto_now_add=True, verbose_name="Дата публикации"
+                    ),
+                ),
+                (
+                    "author",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="posts",
+                        to=settings.AUTH_USER_MODEL,
+                        verbose_name="Автор",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Публикация',
-                'verbose_name_plural': 'Публикации',
-                'ordering': ['-created_at'],
+                "verbose_name": "Публикация",
+                "verbose_name_plural": "Публикации",
+                "ordering": ["-created_at"],
             },
         ),
     ]

@@ -10,10 +10,11 @@ class ListPostView(LoginRequiredMixin, ListView):
     paginate_by = 6
 
     def get_queryset(self):
-        following_ids = self.request.user.following.values_list("following_id", flat=True)
+        following_ids = self.request.user.following.values_list(
+            "following_id", flat=True
+        )
         return (
-            Post.objects
-            .filter(author_id__in=following_ids)
+            Post.objects.filter(author_id__in=following_ids)
             .select_related("author")
             .order_by("-created_at")
         )
