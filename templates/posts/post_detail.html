@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="mx-auto" style="max-width: 470px;">
+  <div class="card border">
+    <div class="card-header bg-white d-flex align-items-center gap-2 border-0 py-2">
+      <a href="{% url 'accounts:profile' username=post.author.username %}">
+        {% if post.author.avatar %}
+          <img src="{{ post.author.avatar.url }}" alt="{{ post.author.username }}"
+               class="rounded-circle" width="32" height="32" style="object-fit: cover;">
+        {% endif %}
+      </a>
+      <a href="{% url 'accounts:profile' username=post.author.username %}"
+         class="fw-semibold text-decoration-none text-dark">
+        {{ post.author.username }}
+      </a>
+    </div>
+
+    <img src="{{ post.image.url }}" alt="Публикация {{ post.author.username }}"
+         class="w-100" style="max-height: 470px; object-fit: cover;">
+
+    <div class="card-body py-2">
+      {% if request.user.is_authenticated %}
+        <form method="post" action="{% url 'like' post.pk %}">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-sm {% if is_liked %}btn-danger{% else %}btn-outline-secondary{% endif %}">
+            {% if is_liked %}♥ Нравится{% else %}♡ Нравится{% endif %}
+          </button>
+        </form>
+      {% endif %}
+
+      <p class="fw-semibold mt-2 mb-1">{{ likes_count }} отметок «Нравится»</p>
+
+      {% if post.description %}
+        <p class="mb-1">
+          <a href="{% url 'accounts:profile' username=post.author.username %}"
+             class="fw-semibold text-decoration-none text-dark">
+            {{ post.author.username }}
+          </a>
+          {{ post.description }}
+        </p>
+      {% endif %}
+
+      <p class="text-muted small mb-0">{{ post.created_at|date:"d.m.Y H:i" }}</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

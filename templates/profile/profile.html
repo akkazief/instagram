@@ -27,7 +27,7 @@
       </div>
 
       {% if request.user.is_authenticated and request.user != profile_user %}
-        <form method="post" action="{% url 'accounts:follow' profile_user.username %}">
+        <form method="post" action="{% url 'follow' profile_user.username %}">
           {% csrf_token %}
           <button type="submit">
             {% if is_following %}Отписаться{% else %}Подписаться{% endif %}
@@ -40,8 +40,10 @@
   <div class="row g-2">
     {% for post in posts %}
       <div class="col-4">
+        <a href="{% url 'post_detail' post.pk %}">
           <img src="{{ post.image.url }}" alt="Публикация {{ profile_user.username }}"
                class="w-100" style="aspect-ratio: 1 / 1; object-fit: cover;">
+          </a>
       </div>
     {% empty %}
       <div class="text-center text-muted py-5">
