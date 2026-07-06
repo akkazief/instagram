@@ -44,5 +44,27 @@
       <p class="text-muted small mb-0">{{ post.created_at|date:"d.m.Y H:i" }}</p>
     </div>
   </div>
+  <div class="comments mb-3">
+        {% for comment in comments %}
+          <p class="mb-1">
+            <a href="{% url 'accounts:profile' username=comment.author.username %}"
+               class="fw-semibold text-decoration-none text-dark">
+              {{ comment.author.username }}
+            </a>
+            {{ comment.text }}
+          </p>
+        {% empty %}
+          <p class="text-muted">Комментариев пока нет</p>
+        {% endfor %}
+      </div>
+
+      {% if request.user.is_authenticated %}
+        <form method="post" action="{% url 'add_comment' post.pk %}" class="d-flex gap-2">
+          {% csrf_token %}
+          {{ comment_form.text }}
+          <button type="submit" class="btn btn-sm btn-primary">Отправить</button>
+        </form>
+      {% endif %}
+    </div>
 </div>
 {% endblock %}

@@ -1,6 +1,7 @@
 from django.urls import path
-from instagram.views import CreatePostView, ListPostView, FollowView, PostDetailView, LikeView
-
+from instagram.views import (
+    CreatePostView, ListPostView, FollowView,
+    PostDetailView, LikeView, CommentCreateView)
 
 
 urlpatterns = [
@@ -9,4 +10,5 @@ urlpatterns = [
     path("<str:username>/follow/", FollowView.as_view(), name="follow"),
     path("posts/<int:pk>/", PostDetailView.as_view(), name="post_detail"),
     path("posts/<int:pk>/like/", LikeView.as_view(), name="like"),
+    path("posts/<int:pk>/comment/", CommentCreateView.as_view(), name="add_comment"),
 ]
