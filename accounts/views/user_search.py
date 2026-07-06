@@ -9,7 +9,7 @@ User = get_user_model()
 
 class UserSearchView(ListView):
     model = User
-    template_name = "accounts/search.html"
+    template_name = "accounts/users_list.html"
     context_object_name = "users"
     paginate_by = 10
 

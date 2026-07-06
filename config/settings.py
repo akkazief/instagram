@@ -129,9 +129,9 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 
-# LOGIN_REDIRECT_URL = "forum:topic_list"
+LOGIN_REDIRECT_URL = "posts_list"
 
-# LOGOUT_REDIRECT_URL = "forum:topic_list"
+LOGOUT_REDIRECT_URL = "posts_list"
 
 LOGIN_URL = "accounts:login"
 

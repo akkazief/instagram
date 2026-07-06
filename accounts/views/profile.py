@@ -10,4 +10,4 @@ def profile(request, username):
         "profile_user": profile_user,
         "posts": posts,
     }
-    return render(request, "accounts/profile.html", context)
+    return render(request, "profile/profile.html", context)
